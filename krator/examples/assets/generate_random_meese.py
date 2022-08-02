@@ -21,11 +21,7 @@ api = client.CustomObjectsApi()
 for name in moose_names:
     antlers = fake.boolean()
     height = random.gauss(1.7, 0.1)
-    if antlers:
-        weight = random.gauss(540, 53)
-    else:
-        weight = random.gauss(345, 48)
-
+    weight = random.gauss(540, 53) if antlers else random.gauss(345, 48)
     moose = {
         "apiVersion": "animals.com/v1",
         "kind": "Moose",
